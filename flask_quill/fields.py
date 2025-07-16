@@ -1,5 +1,5 @@
-from wtforms import HiddenField
+from wtforms import TextAreaField
 
-class QuillField(HiddenField):
+class QuillField(TextAreaField):
     def __call__(self, *args, **kwargs):
         return super().__call__(*args, **kwargs)

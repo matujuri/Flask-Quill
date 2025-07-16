@@ -1,15 +1,19 @@
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
+from wtforms import SubmitField
 from wtforms.validators import DataRequired
 from flask_quill import Quill
 from flask_quill.fields import QuillField
+from flask_bootstrap import Bootstrap5
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret'
 quill = Quill(app)
+bootstrap5 = Bootstrap5(app)
 
 class PostForm(FlaskForm):
     body = QuillField("Content", validators=[DataRequired()])
+    submit = SubmitField("Submit")
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

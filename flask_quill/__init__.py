@@ -28,3 +28,29 @@ class Quill:
   }});
 </script>
 ''')
+
+    def config(self, name):
+        """
+        指定したname属性のtextareaをQuillエディタ化するJSを出力します。
+        Bootstrap5のrender_formと併用可能。
+        """
+        return Markup(f'''
+<script>
+  document.addEventListener('DOMContentLoaded', function () {{
+    var textarea = document.querySelector("textarea[name='{name}']");
+    if (textarea) {{
+      textarea.style.display = "none";
+      textarea.removeAttribute("required");
+      var quillDiv = document.createElement("div");
+      quillDiv.id = "quill-container-{name}";
+      quillDiv.style.height = "150px";
+      textarea.parentNode.insertBefore(quillDiv, textarea);
+      var quill = new Quill(quillDiv, {{ theme: "snow" }});
+      quill.root.innerHTML = textarea.value;
+      textarea.form.onsubmit = function () {{
+        textarea.value = quill.root.innerHTML;
+      }};
+    }}
+  }});
+</script>
+''')
