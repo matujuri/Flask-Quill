@@ -1,6 +1,5 @@
 from markupsafe import Markup
 
-
 class Quill:
     def __init__(self, app=None):
         if app:
@@ -11,8 +10,8 @@ class Quill:
 
     def load(self):
         return Markup('''
-<link href="https://cdn.jsdelivr.net/npm/@quilljs/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@quilljs/quill@2.0.2/dist/quill.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 ''')
 
     def create_editor(self, field_id):
@@ -22,7 +21,7 @@ class Quill:
 <script>
   let quill;
   document.addEventListener('DOMContentLoaded', function () {{
-    quill = Quill.create('#editor', {{ theme: 'snow' }});
+    quill = new Quill('#editor', {{ theme: 'snow' }});
     document.querySelector('form').onsubmit = function() {{
       document.querySelector('#{field_id}').value = quill.root.innerHTML;
     }};
