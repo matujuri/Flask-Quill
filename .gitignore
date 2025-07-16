@@ -9,3 +9,8 @@ venv/
 .coverage.*
 .coverage.*.*
 .coverage.*.*.*
+
+# PyPI package build artifacts
+dist/
+build/
+*.egg-info/

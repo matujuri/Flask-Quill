@@ -1,5 +1,7 @@
 from markupsafe import Markup
 
+__version__ = "0.1.0"
+
 class Quill:
     def __init__(self, app=None):
         if app:
