@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Flask-Quill Demo</title>
+  {{ quill.load() }}
+</head>
+<body>
+  <h1>Quill フォーム</h1>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    {{ quill.create_editor('body') }}
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
