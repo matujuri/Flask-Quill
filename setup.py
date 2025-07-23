@@ -8,7 +8,7 @@ with open(here / "README.md", encoding="utf-8") as f:
 
 setup(
     name="flask_quill",
-    version="0.1.0",
+    version="0.2.0",
     description="FlaskでQuillリッチテキストエディタを簡単に使える拡張",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -18,10 +18,10 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        "Flask>=3.0.0",
-        "Flask-WTF>=1.2.1",
-        "WTForms>=3.1.2",
-        "Flask-Bootstrap>=3.3.7.1"
+        "Flask>=2.0.0",
+        "Flask-WTF>=1.0.0",
+        "WTForms>=2.3.0",
+        "Bootstrap-Flask>=2.0.0"
     ],
     python_requires=">=3.7",
     classifiers=[
