@@ -21,7 +21,7 @@ setup(
         "Flask>=2.0.0",
         "Flask-WTF>=1.0.0",
         "WTForms>=2.3.0",
-        "Bootstrap-Flask>=2.0.0"
+        "bootstrap-flask>=2.0.0"
     ],
     python_requires=">=3.7",
     classifiers=[
